@@ -9,6 +9,15 @@
     margin: 0;
 }
 
+@font-face {
+  font-family: athena;
+  src: url(../assets/Athena.ttf);
+}
+
+* {
+  font-family: athena;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
