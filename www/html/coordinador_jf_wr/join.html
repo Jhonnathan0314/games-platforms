@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/coordinador_jf_wr/configurations.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/coordinador_jf_wr/square_button.css">
+    <link rel="stylesheet" href="../../css/coordinador_jf_wr/join.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="title">Game platforms</p>
+            <div class="square" onclick="goConfigurations()">
+                <img src="../../img/settings.png" alt="settings">
+            </div>
+        </header>
+        <div class="container_options">
+            <div class="left"></div>
+            <div class="right"></div>
+            <p class="container_title">INGRESE EL CODIGO</p>
+            <div class="button">
+                <input type="text" placeholder="CODIGO">
+            </div>
+            <div class="button">
+                <input type="button" value="INGRESAR" onclick="goLobbie()">
+            </div>
+        </div>
+        <footer>
+            <p>MENU</p>
+            <div class="exit" onclick="goHome()">
+                <img src="../../img/exit_background.png" alt="exit img">
+            </div>
+        </footer>
+        <div class="footer"></div>
+    </div>
+    <script src="../../js/coordinador_jf_wr/global.js"></script>
+    <script src="../../js/coordinador_jf_wr/join.js"></script>
+</body>
+</html>

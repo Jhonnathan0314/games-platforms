@@ -7,8 +7,8 @@
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
     <title>Home</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
     <div class="container">
@@ -17,32 +17,17 @@
             <div class="left"></div>
             <div class="right"></div>
             <div class="button">
-                <input type="button" value="JUGAR">
-                <div class="point_one"></div>
-                <div class="point_two"></div>
-                <div class="point_three"></div>
-                <div class="point_four"></div>
+                <input type="button" value="JUGAR" onclick="goPlay()">
             </div>
             <div class="button">
-                <input type="button" value="OPCIONES">
-                <div class="point_one"></div>
-                <div class="point_two"></div>
-                <div class="point_three"></div>
-                <div class="point_four"></div>
+                <input type="button" value="OPCIONES" onclick="goConfigurations()">
             </div>
                 <div class="button">
-                <input type="button" value="CREDITOS">
-                <div class="point_one"></div>
-                <div class="point_two"></div>
-                <div class="point_three"></div>
-                <div class="point_four"></div>
+                <input type="button" value="CREDITOS" onclick="goCredits()">
             </div>
         </div>
         <footer>
             <p>MENU</p>
-            <div class="exit">
-                <img src="img/exit_background.png" alt="exit img">
-            </div>
         </footer>
         <div class="footer"></div>
     </div>
