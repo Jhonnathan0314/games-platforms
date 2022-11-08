@@ -16,9 +16,13 @@
     "platforms": [
       "android",
       "browser"
-    ]
+    ],
+    "plugins": {
+      "cordova-plugin-vibration": {}
+    }
   },
   "devDependencies": {
-    "cordova-android": "^10.1.2"
+    "cordova-android": "^10.1.2",
+    "cordova-plugin-vibration": "^3.1.1"
   }
 }
