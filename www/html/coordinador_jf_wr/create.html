@@ -17,7 +17,7 @@
         <header>
             <p class="title">Game platforms</p>
             <div class="square" onclick="goConfigurations()">
-                <img src="../../img/settings.png" alt="settings">
+                <img src="../../img/settings.png" alt="settings" onclick="vibrate()">
             </div>
         </header>
         <div class="container_options">
@@ -34,18 +34,18 @@
                 <p class="container_text">Jugador 6</p>
                 <p class="container_text">Jugador 7</p>
             </div>
-            <input type="button" value="JUEGOS" onclick="goGames()">
+            <input type="button" value="JUEGOS" onclick="goGames();vibrate()">
             <div class="code">
-                <input type="text" value="C0D1G0" readonly>
-                <div class="img">
+                <input type="text" value="C0D1G0" id="inputCode" readonly>
+                <div class="img" onclick="vibrate()">
                     <img src="../../img/share.png" alt="share">
                 </div>
             </div>
         </div>
         <footer>
             <p>LOBBIE</p>
-            <div class="exit" onclick="goHome()">
-                <img src="../../img/exit_background.png" alt="exit img">
+            <div class="exit" onclick="deleteData()">
+                <img src="../../img/exit_background.png" alt="exit img" onclick="vibrate()">
             </div>
         </footer>
         <div class="footer"></div>

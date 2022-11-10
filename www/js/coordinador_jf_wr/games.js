@@ -1,10 +1,6 @@
 let inputCode = document.getElementById("inputCode")
 inputCode.value = localStorage.getItem("code")
 
-function goGames() {
-    window.open("../../html/coordinador_jf_wr/games.html", "_self")
-}
-
 function deleteData() {
     fetch("https://games-plat-db.herokuapp.com/sesionhasgame")
     .then(res => res.json())

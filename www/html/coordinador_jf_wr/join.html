@@ -18,7 +18,7 @@
         <header>
             <p class="title">Game platforms</p>
             <div class="square" onclick="goConfigurations()">
-                <img src="../../img/settings.png" alt="settings">
+                <img src="../../img/settings.png" alt="settings" onclick="vibrate()">
             </div>
         </header>
         <div class="container_options">
@@ -26,16 +26,16 @@
             <div class="right"></div>
             <p class="container_title">INGRESE EL CODIGO</p>
             <div class="button">
-                <input type="text" placeholder="CODIGO">
+                <input type="number" placeholder="CODIGO" id="inputCode">
             </div>
-            <div class="button">
+            <div class="button" onclick="vibrate()">
                 <input type="button" value="INGRESAR" onclick="goLobbie()">
             </div>
         </div>
         <footer>
             <p>MENU</p>
             <div class="exit" onclick="goHome()">
-                <img src="../../img/exit_background.png" alt="exit img">
+                <img src="../../img/exit_background.png" alt="exit img" onclick="vibrate()">
             </div>
         </footer>
         <div class="footer"></div>

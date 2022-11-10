@@ -18,23 +18,23 @@
         <div class="container_options">
             <div class="left"></div>
             <div class="right"></div>
-            <div class="button">
-                <input type="button" value="SONIDO: SI">
+            <div class="button" onclick="vibrate(); changeMusic()">
+                <input type="button" value="SONIDO: SI" id="musicButton">
             </div>
-            <div class="button">
-                <input type="button" value="EFECTOS: SI">
+            <div class="button" onclick="vibrate(); changeEfects()">
+                <input type="button" value="EFECTOS: SI" id="efectsButton">
             </div>
-            <div class="button">
-                <input type="button" value="VIBRAR: SI">
+            <div class="button" onclick="changeVibrate()">
+                <input type="button" value="VIBRAR: SI" id="vibrateButton">
             </div>
-            <div class="square">
+            <div class="square" onclick="resetSettings(); vibrate()">
                 <img src="../../img/reset.png" alt="settings">
             </div>
         </div>
         <footer>
             <p>OPCIONES</p>
             <div class="exit" onclick="goHome()">
-                <img src="../../img/exit_background.png" alt="exit img">
+                <img src="../../img/exit_background.png" alt="exit img" onclick="vibrate()">
             </div>
         </footer>
         <div class="footer"></div>

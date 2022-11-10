@@ -16,13 +16,13 @@
         <div class="container_options">
             <div class="left"></div>
             <div class="right"></div>
-            <div class="button">
+            <div class="button" onclick="vibrate()">
                 <input type="button" value="JUGAR" onclick="goPlay()">
             </div>
-            <div class="button">
-                <input type="button" value="OPCIONES" onclick="goConfigurations()">
+            <div class="button" onclick="vibrate(); goConfiguration()">
+                <input type="button" value="OPCIONES">
             </div>
-                <div class="button">
+                <div class="button" onclick="vibrate()">
                 <input type="button" value="CREDITOS" onclick="goCredits()">
             </div>
         </div>
@@ -32,5 +32,6 @@
         <div class="footer"></div>
     </div>
     <script src="js/index.js"></script>
+    <script src="js/coordinador_jf_wr/global.js"></script>
 </body>
 </html>
