@@ -22,17 +22,30 @@
     </div>
     <div class="answers">
         <div class="answer">
-            <input id="a0" type="button" value="" class="input-answer" onclick="hide_show_YT()">
+            <input style="font-size: 15px" id="a0" type="button" value="" class="input-answer principal-font" onclick="choose(0)">
         </div>
         <div class="answer">
-            <input id="a1" type="button" value="" class="input-answer">
+            <input style="font-size: 15px" id="a1" type="button" value="" class="input-answer principal-font" onclick="choose(1)">
         </div>
         <div class="answer">
-            <input id="a2" type="button" value="" class="input-answer">
+            <input style="font-size: 15px" id="a2" type="button" value="" class="input-answer principal-font" onclick="choose(2)">
         </div>
         <div class="answer">
-            <input id="a3" type="button" value="" class="input-answer">
+            <input style="font-size: 15px" id="a3" type="button" value="" class="input-answer principal-font" onclick="choose(3)">
         </div>
+    </div>
+    <div id="modalOk" class="modal">
+        <div class="modal-content">
+            <p>Correcto!</p>
+        </div>
+    </div>
+    <div id="modalOkn't" class="modal">
+        <div class="modal-content">
+            <p>Incorrecto!</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <input style="font-size: 18px" type="button" value="Siguiente!" onclick="cambiarEscena()" class="input-answer principal-font">
     </div>
 </body>
 </html>

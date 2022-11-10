@@ -32,3 +32,16 @@ body {
     border: 10px solid rgb(33, 30, 76);
     border-radius: 10px;
 }
+
+.score-escene {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
+.principal-font {
+    color: rgb(33, 30, 76);
+    font-size: 30px;
+    font-weight: bold;
+}
