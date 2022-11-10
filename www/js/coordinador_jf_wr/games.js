@@ -1,3 +1,5 @@
+localStorage.setItem("location", "games")
+
 let inputCode = document.getElementById("inputCode")
 inputCode.value = localStorage.getItem("code")
 

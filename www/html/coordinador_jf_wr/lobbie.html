@@ -25,18 +25,13 @@
             <div class="left"></div>
             <div class="right"></div>
             <p class="container_title">INGRESE SU NOMBRE</p>
-            <input type="text" placeholder="Nombre" id="username">
-            <input type="button" value="GUARDAR" id="save" onclick="saveName(); vibrate()">
-            <div class="players">
-                <p class="container_subtitle">JUGADORES DENTRO:</p>
-                <p class="container_text">Jugador 1</p>
-                <p class="container_text">Jugador 2</p>
-                <p class="container_text">Jugador 3</p>
-                <p class="container_text">Jugador 4</p>
-                <p class="container_text">Jugador 5</p>
-                <p class="container_text">Jugador 6</p>
-                <p class="container_text">Jugador 7</p>
+            <div class="button">
+                <input type="text" placeholder="Nombre" id="username">
             </div>
+            <div class="button">
+                <input type="button" value="GUARDAR" id="save" onclick="saveName(); vibrate()">
+            </div>
+            <div class="players" onclick="refreshPlayers()"></div>
         </div>
         <footer>
             <p>LOBBIE</p>

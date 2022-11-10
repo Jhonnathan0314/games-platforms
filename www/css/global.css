@@ -49,12 +49,8 @@ body {
     align-items: center;
 }
 
-.button {
-    width: 250px;
-}
-
 .button input {
-    width: 100%;
+    width: 250px;
     height: 74px;
     border-radius: 22px;
     font-size: 36px;

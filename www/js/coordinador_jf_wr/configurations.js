@@ -66,3 +66,22 @@ function resetSettings(){
     musicButton.value = "SONIDO: SI";
     efectsButton.value = "EFECTOS: SI";
 }
+
+function goBack() {
+    const lastLocation = localStorage.getItem("location")
+    if(lastLocation == "index.html") {
+        window.open("../../index.html", "_self")
+    }else if(lastLocation == "create_or_join"){
+        window.open("../../html/coordinador_jf_wr/create_or_join.html", "_self")
+    }else if(lastLocation == "create"){
+        window.open("../../html/coordinador_jf_wr/create.html", "_self")
+    }else if(lastLocation == "games"){
+        window.open("../../html/coordinador_jf_wr/games.html", "_self")
+    }else if(lastLocation == "join"){
+        window.open("../../html/coordinador_jf_wr/join.html", "_self")
+    }else if(lastLocation == "lobbie"){
+        window.open("../../html/coordinador_jf_wr/lobbie.html", "_self")
+    }else {
+        window.open("../../index.html", "_self")
+    }
+}

@@ -1,3 +1,5 @@
+localStorage.setItem("location", "create_or_join")
+
 function goCreate(){ 
     window.open("./create.html", "_self")
 }

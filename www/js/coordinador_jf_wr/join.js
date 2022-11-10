@@ -1,3 +1,5 @@
+localStorage.setItem("location", "join")
+
 function goLobbie() {
     let sesionCode = document.getElementById("inputCode").value
 

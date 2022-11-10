@@ -1,5 +1,28 @@
+localStorage.setItem("location", "create")
+
 let inputCode = document.getElementById("inputCode")
 inputCode.value = localStorage.getItem("code")
+
+function refreshPlayers(){
+    findAllPlayers()
+}
+
+function findAllPlayers(){
+    fetch("https://games-plat-db.herokuapp.com/player")
+    .then(res => res.json())
+    .then(res => showPlayers(res))
+}
+
+function showPlayers(players){
+    let divPlayers = document.querySelector(".players")
+    let newHTMLcode = "<p class='container_subtitle'>JUGADORES DENTRO:</p>";
+    for(player of players){
+        if(player.sesion.id_sesion == localStorage.getItem("code")){
+            newHTMLcode += `<p class="container_text">${player.username}</p>`
+        }
+    }
+    divPlayers.innerHTML = newHTMLcode;
+}
 
 function goGames() {
     window.open("../../html/coordinador_jf_wr/games.html", "_self")

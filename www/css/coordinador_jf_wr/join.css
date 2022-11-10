@@ -8,5 +8,6 @@ p {
 }
 
 input[type=number] {
+    min-width: 250px;
     text-align: center;
 }
