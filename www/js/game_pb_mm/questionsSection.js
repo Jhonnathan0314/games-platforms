@@ -288,7 +288,11 @@ function selectQuestion(){
         }else{
             localStorage.removeItem("catQuestions");
             localStorage.removeItem("numQuestions");
-            window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+            if(localStorage.getItem("role") == "player"){
+                window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+            }else{
+                window.open("../../html/coordinador_jf_wr/games.html","_self")
+            }
         }
     }
 }
@@ -298,7 +302,8 @@ function refreshScoreInScreen(res){
 }
 
 function addScore(){
-    fetch("https://games-plat-db.herokuapp.com/playerhasgame/player/7/game/6",{
+    const idPlayer = localStorage.getItem("idPlayer")
+    fetch("https://games-plat-db.herokuapp.com/playerhasgame/player/" + idPlayer + "/game/6",{
         method:"post",
         body:JSON.stringify({
             "score": 134

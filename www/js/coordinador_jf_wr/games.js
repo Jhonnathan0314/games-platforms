@@ -21,12 +21,25 @@ function printGames(games) {
                             </div>`
         }
     }
+    newHTMLcode += `<div class="button" onclick="vibrate(); endGame()">
+                        <input type="button" value="FINALIZAR">
+                    </div>`
     divGames.innerHTML = newHTMLcode;
 }
 
 function startGame(nameGame){
     if(nameGame == "Trivia P&M"){
-        window.open("../../html/game_pb_mm/homepb.html", "_self")
+        fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+            method: "PUT",
+            body: JSON.stringify({ 
+                "coordinator": "Trivia P&M"
+             }),
+            headers: {"Content-type": "application/json"}
+        }).then(res => 
+            setTimeout(() => {
+                localStorage.setItem("role", "admin")
+                window.open("../../html/game_pb_mm/homepb.html", "_self")
+            }, 300))
     }
 }
 
@@ -64,4 +77,8 @@ function deleteSesion(){
             window.open("../../index.html", "_self")
         }, 300))
     localStorage.removeItem("code")
+}
+
+function endGame() {
+    window.open("../../html/coordinador_jf_wr/results.html", "_self")
 }

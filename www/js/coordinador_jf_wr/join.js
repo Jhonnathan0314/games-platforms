@@ -28,7 +28,8 @@ function createPlayer(sesionCode) {
     }).then(res => res.json())
     .then(res => 
         localStorage.setItem("idPlayer", res.idPlayer),
-        localStorage.setItem("codeSesionPlayer", sesionCode)
+        localStorage.setItem("codeSesionPlayer", sesionCode),
+        localStorage.setItem("role", "player")
     )
     .catch(error => console.log(error))
     setTimeout(() => {

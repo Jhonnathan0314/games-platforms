@@ -27,15 +27,32 @@ function createSesion(){
 function findAllGames() {
     fetch("https://games-plat-db.herokuapp.com/game")
     .then(res => res.json())
-    .then(res => createSesionHasGames(res))
+    .then(res => createPlayer(res))
+}
+
+function createPlayer(games){
+    fetch('https://games-plat-db.herokuapp.com/player/sesion/' + localStorage.getItem("code"),{
+        method: "POST",
+        body: JSON.stringify({
+            "username": "Admin",
+            "totalScore": 0
+        }),
+        headers: {"Content-type": "application/json"}
+    }).then(res => res.json())
+    .then(res => 
+        localStorage.setItem("idPlayer", res.idPlayer),
+        localStorage.setItem("codeSesionPlayer", localStorage.getItem("code"))
+    )
+    .catch(error => console.log(error))
+    setTimeout(() => {
+        createSesionHasGames(games)
+    }, 300);
 }
 
 function createSesionHasGames(allGames){
     let idSesion = localStorage.getItem("code")
 
     for(game of allGames){
-        console.log(game)
-        console.log('https://games-plat-db.herokuapp.com/sesionhasgame/sesion/' + idSesion + '/game/' + game.idGame)
         fetch('https://games-plat-db.herokuapp.com/sesionhasgame/sesion/' + idSesion + '/game/' + game.idGame,{
             method: "POST",
             body: JSON.stringify({ }),

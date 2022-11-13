@@ -4,11 +4,20 @@ window.addEventListener('DOMContentLoaded', function(ev) {
     findAllPlayers()
     setInterval(() => {
         findAllPlayers()
-    }, 5000)
+        checkStart()
+    }, 3000)
 });
 
-function refreshPlayers(){
-    findAllPlayers()
+function checkStart() {
+    fetch("https://games-plat-db.herokuapp.com/sesion/" + localStorage.getItem("codeSesionPlayer"))
+    .then(res => res.json())
+    .then(res => checkState(res))
+}
+
+function checkState(sesion) {
+    if(sesion.coordinator == "Trivia P&M"){
+        window.open("../../html/game_pb_mm/homepb.html", "_self")
+    }
 }
 
 function findAllPlayers(){
