@@ -16,7 +16,6 @@ function printPlayers(players) {
         if (a.totalScore > b.totalScore) {
           return -1;
         }
-        // a must be equal to b
         return 0;
     });
     for(player of players){
@@ -30,7 +29,6 @@ function printPlayers(players) {
 }
 
 function deleteData(){
-    console.log("holi")
     findAllSesionHasGames()
 }
 
@@ -104,8 +102,5 @@ function deleteSesion() {
         method: "DELETE",
         body: JSON.stringify({ }),
         headers: {"Content-type": "application/json"}
-    }).then(res => 
-        setTimeout(() => {
-            // window.open("../../index.html")
-        }, 150))
+    }).then(res => console.log("deleteSesion"))
 }
