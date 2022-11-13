@@ -246,7 +246,7 @@ const technologyCorrects={
 
 updateScore()
 function updateScore(){
-    fetch("https://games-plat-db.herokuapp.com/player/7")
+    fetch("https://games-plat-db.herokuapp.com/player/" + localStorage.getItem("idPlayer"))
     .then(res=>res.json())
     .then(res=>refreshScoreInScreen(res))
     .catch(error=> console.log(error))
@@ -255,9 +255,6 @@ function updateScore(){
 selectQuestion();
 function selectQuestion(){
     let numQuestions=parseInt(localStorage.getItem("numQuestions"));
-    console.log(numQuestions);
-    console.log(localStorage.getItem("catQuestions"));
-    
     if(numQuestions>0){
         let random=Math.floor(Math.random() * (10 - 1) + 1)+"";
         if(localStorage.getItem("catQuestions")=="history"){
@@ -288,6 +285,7 @@ function selectQuestion(){
         }else{
             localStorage.removeItem("catQuestions");
             localStorage.removeItem("numQuestions");
+            updateSesionCoordinator()
             if(localStorage.getItem("role") == "player"){
                 window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
             }else{
@@ -319,4 +317,18 @@ function goQuestions(){
 
 function goHome(){
     window.open("../../html/game_pb_mm/homepb.html", "_self");
+}
+
+function updateSesionCoordinator() {
+    fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+        method: "PUT",
+        body: JSON.stringify({ 
+            "coordinator": "default"
+         }),
+        headers: {"Content-type": "application/json"}
+    }).then(res => 
+        setTimeout(() => {
+            localStorage.setItem("role", "admin")
+            window.open("../../html/game_pb_mm/homepb.html", "_self")
+        }, 300))
 }
