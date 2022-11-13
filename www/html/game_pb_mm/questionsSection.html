@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>PREGUNTA</title>
+    <link rel="stylesheet" href="../../css/game_pb_mm/questionsSection.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/game_pb_mm/homepb.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3 class="Puntaje"> Puntaje: 
+                <label id="score"></label>
+            </h3>
+            
+            <h3 class="Tiempo"> Tiempo: 
+                <label id="time"></label>
+            </h3>
+        </div>
+        
+        <p id="title" class="title">PREGUNTA</p><br>
+        <div class="container_options">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div  class="pregunta">
+                <label  id="question" pregunta="pregunta"></label>
+            </div>
+        </div>
+        <div class="containerDos">
+            <div id="containerA" class="container_optionsDos">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="pregunta">
+                    <label id="answerA" class="respuesta">Respuesta</label>
+                </div>
+            </div>
+            <div id="containerB" class="container_optionsDos">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="pregunta">
+                    <label id="answerB" class="respuesta">Respuesta</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="../../img/game_pb_mm/sonido.mp3" autoplay="true" loop="true"></audio>
+    <script src="../../js/game_pb_mm/questionsSection.js"></script>
+</body>
+</html>
