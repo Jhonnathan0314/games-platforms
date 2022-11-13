@@ -16,40 +16,39 @@
     <div class="container">
         <div class="header">
             <h3 class="Puntaje"> Puntaje: 
-                <label puntaje="llenadoPuntaje">0000</label>
+                <label id="score"></label>
             </h3>
             
             <h3 class="Tiempo"> Tiempo: 
-                <label tiempo="llenadoTiempo">0000</label>
+                <label id="time"></label>
             </h3>
         </div>
         
-        <p class="title">PREGUNTA</p><br>
+        <p id="title" class="title">PREGUNTA</p><br>
         <div class="container_options">
             <div class="left"></div>
             <div class="right"></div>
-            <div class="pregunta">
-                <label pregunta="pregunta">texto correspondiente a la pregunta</label>
+            <div  class="pregunta">
+                <label  id="question" pregunta="pregunta"></label>
             </div>
         </div>
         <div class="containerDos">
-            <div class="container_optionsDos">
+            <div id="containerA" class="container_optionsDos">
                 <div class="left"></div>
                 <div class="right"></div>
                 <div class="pregunta">
-                    <label class="respuesta">Respuesta</label>
+                    <label id="answerA" class="respuesta">Respuesta</label>
                 </div>
             </div>
-            <div class="container_optionsDos">
+            <div id="containerB" class="container_optionsDos">
                 <div class="left"></div>
                 <div class="right"></div>
                 <div class="pregunta">
-                    <label class="respuesta">Respuesta</label>
+                    <label id="answerB" class="respuesta">Respuesta</label>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../../js/coordinador_jf_wr/global.js"></script>
-    <script src="../../js/coordinador_jf_wr/configurations.js"></script>
+    <script src="../../js/game_pb_mm/questionsSection.js"></script>
 </body>
 </html>
