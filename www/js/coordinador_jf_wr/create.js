@@ -3,9 +3,12 @@ localStorage.setItem("location", "create")
 let inputCode = document.getElementById("inputCode")
 inputCode.value = localStorage.getItem("code")
 
-function refreshPlayers(){
+window.addEventListener('DOMContentLoaded', function(ev) { 
     findAllPlayers()
-}
+    setInterval(() => {
+        findAllPlayers()
+    }, 5000)
+});
 
 function findAllPlayers(){
     fetch("https://games-plat-db.herokuapp.com/player")

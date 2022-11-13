@@ -1,5 +1,12 @@
 localStorage.setItem("location", "lobbie")
 
+window.addEventListener('DOMContentLoaded', function(ev) { 
+    findAllPlayers()
+    setInterval(() => {
+        findAllPlayers()
+    }, 5000)
+});
+
 function refreshPlayers(){
     findAllPlayers()
 }
