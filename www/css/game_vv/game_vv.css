@@ -1,0 +1,91 @@
+body{
+    margin: 0px;
+}
+
+#board{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+#jugador{
+    width: 70px;
+    height: 70px;
+    bottom: 190px;
+    position: absolute;
+    left: 20px;
+}
+
+#jugador img{
+    width: 100%;
+    height: 100%;
+}
+
+#fondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../../img/game_vv/pista.png);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    animation: movimientoPista 20s linear infinite;
+
+}
+
+#obstaculo{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 190px;
+    right: 0%;
+    animation: movimientoObstaculo 3s linear infinite;
+}
+
+#obstaculo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.saltarJugador{
+    animation: saltar 1s linear;
+}
+
+#puntajeContainer{
+    font-size: 50px;
+    text-align-last: center;
+    margin-top: 20px;
+}
+
+
+@keyframes saltar {
+    0%{
+        bottom: 190px;
+
+    }
+    40%,60%{
+        bottom: 320px;
+    }
+    
+    
+}
+
+@keyframes movimientoPista {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: -10000px 0;
+    }
+}
+
+@keyframes movimientoObstaculo {
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: 100%;
+    }
+}
