@@ -1,12 +1,3 @@
-document.addEventListener('deviceready', onDeviceReady, false);
-
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
-
-    alert('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
-}
-
 var photos = new Array()
 var which = 0
 var directoryImages = "/www/img/game_tp_ss/"
@@ -66,7 +57,8 @@ var score_html = document.getElementById('score')
 //Validación del juego
 function motion(event) {
     //Verificar el movimiento
-    if(event.accelerationIncludingGravity.z>4){
+    if(event.accelerationIncludingGravity.z>4 || 
+      event.accelerationIncludingGravity<-3){
       score = score + 50;
       score_html.innerHTML = ''+score;
     }
@@ -81,7 +73,7 @@ function motion(event) {
 
 }
 if (window.DeviceOrientationEvent) {
-  window.addEventListener("deviceorientation", orientation, false);
+  window.addEventListener("deviceorientation", motion);
 } else {
   console.log("DeviceOrientationEvent is not supported");
 }
