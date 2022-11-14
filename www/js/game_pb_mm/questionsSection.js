@@ -1,6 +1,6 @@
 window.onload = updateClock;
 
-var totalTime = 8;
+var totalTime = 10;
 localStorage.setItem("answered","false")
 
 window.addEventListener("deviceorientation",function(event) {
@@ -286,11 +286,13 @@ function selectQuestion(){
             localStorage.removeItem("catQuestions");
             localStorage.removeItem("numQuestions");
             updateSesionCoordinator()
-            if(localStorage.getItem("role") == "player"){
-                window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
-            }else{
-                window.open("../../html/coordinador_jf_wr/games.html","_self")
-            }
+            setTimeout(() => {
+                if(localStorage.getItem("role") == "player"){
+                    window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+                }else{
+                    window.open("../../html/coordinador_jf_wr/games.html","_self")
+                }
+            }, 500);
         }
     }
 }
@@ -320,15 +322,11 @@ function goHome(){
 }
 
 function updateSesionCoordinator() {
-    fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+    fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("codeSesionPlayer"),{
         method: "PUT",
         body: JSON.stringify({ 
             "coordinator": "default"
          }),
         headers: {"Content-type": "application/json"}
-    }).then(res => 
-        setTimeout(() => {
-            localStorage.setItem("role", "admin")
-            window.open("../../html/game_pb_mm/homepb.html", "_self")
-        }, 300))
+    }).then(res => console.log("updateSesionCoordinator"))
 }

@@ -1,15 +1,12 @@
-console.log("js")
 findAllPlayersToShow()
 
 function findAllPlayersToShow() {
-    console.log("findAllPlayers")
     fetch("https://games-plat-db.herokuapp.com/player")
     .then(res => res.json())
     .then(res => printPlayers(res))
 }
 
 function printPlayers(players) {
-    console.log(players)
     let divPlayers = document.querySelector(".games")
     let newHTMLcode = "";
     players.sort(function (a, b) {
@@ -21,7 +18,6 @@ function printPlayers(players) {
         }
         return 0;
     });
-    console.log(players)
     for(player of players){
         if(player.sesion.id_sesion == localStorage.getItem("code")){
             newHTMLcode += `<div class="button" onclick="vibrate()">
@@ -106,5 +102,8 @@ function deleteSesion() {
         method: "DELETE",
         body: JSON.stringify({ }),
         headers: {"Content-type": "application/json"}
-    }).then(res => console.log("deleteSesion"), window.open("../../index.html", "_self"))
+    }).then(res => console.log("deleteSesion"))
+    setTimeout(() => {
+        window.open("../../index.html", "_self")
+    }, 1000)
 }
