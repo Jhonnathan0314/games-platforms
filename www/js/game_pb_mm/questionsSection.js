@@ -312,7 +312,6 @@ function addScore(){
     }).then(res =>console.log(res)).catch(error =>console.log(error))
 }
 
-
 function goQuestions(){
     window.open("./questionsSection.html","_self");
 }

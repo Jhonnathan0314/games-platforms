@@ -40,6 +40,18 @@ function startGame(nameGame){
                 localStorage.setItem("role", "admin")
                 window.open("../../html/game_pb_mm/homepb.html", "_self")
             }, 300))
+    }else if(nameGame == "Adivina pelicula"){
+        fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+            method: "PUT",
+            body: JSON.stringify({ 
+                "coordinator": "Adivina pelicula"
+             }),
+            headers: {"Content-type": "application/json"}
+        }).then(res => 
+            setTimeout(() => {
+                localStorage.setItem("role", "admin")
+                window.open("../../html/game_rp/views/main.html", "_self")
+            }, 300))
     }
 }
 

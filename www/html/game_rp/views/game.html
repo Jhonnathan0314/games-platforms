@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <title>Adivina La Pelicula</title>
+    <link rel="stylesheet" href="../../../css/game_rp/game.css">
+    <link rel="stylesheet" href="../../../css/normalize.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../../../js/game_rp/functions.js"></script>
+</head>
+<body>
+    <div class="player">
+        <div id="player" style="display: none"></div>
+        <div id="audio">
+            <audio id="audioPlayer" controls src="">
+            </audio>
+        </div>
+    </div>
+    <div class="answers">
+        <div class="answer">
+            <input style="font-size: 15px" id="a0" type="button" value="" class="input-answer principal-font" onclick="choose(0)">
+        </div>
+        <div class="answer">
+            <input style="font-size: 15px" id="a1" type="button" value="" class="input-answer principal-font" onclick="choose(1)">
+        </div>
+        <div class="answer">
+            <input style="font-size: 15px" id="a2" type="button" value="" class="input-answer principal-font" onclick="choose(2)">
+        </div>
+        <div class="answer">
+            <input style="font-size: 15px" id="a3" type="button" value="" class="input-answer principal-font" onclick="choose(3)">
+        </div>
+    </div>
+    <div id="modalOk" class="modal">
+        <div class="modal-content">
+            <p>Correcto!</p>
+        </div>
+    </div>
+    <div id="modalOkn't" class="modal">
+        <div class="modal-content">
+            <p>Incorrecto!</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <input style="font-size: 18px" type="button" value="Siguiente!" onclick="cambiarEscena()" class="input-answer principal-font">
+    </div>
+    <div id="final" class="modal">
+        <div class="modal-content">
+            <p id="fscore"></p>
+        </div>
+    </div>
+</body>
+</html>

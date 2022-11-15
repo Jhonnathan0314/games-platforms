@@ -17,6 +17,8 @@ function checkStart() {
 function checkState(sesion) {
     if(sesion.coordinator == "Trivia P&M"){
         window.open("../../html/game_pb_mm/homepb.html", "_self")
+    }else if(sesion.coordinator == "Adivina pelicula"){
+        window.open("../../html/game_rp/views/main.html", "_self")
     }
 }
 

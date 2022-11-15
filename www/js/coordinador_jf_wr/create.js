@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function(ev) {
     findAllPlayers()
     setInterval(() => {
         findAllPlayers()
-    }, 5000)
+    }, 3000)
 });
 
 function findAllPlayers(){
