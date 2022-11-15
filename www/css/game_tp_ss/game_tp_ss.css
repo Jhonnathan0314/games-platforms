@@ -45,7 +45,7 @@
 
   }
   .img1 {
-    animation: go-aument 2s infinite alternate;
+    animation: go-left-right 2s infinite alternate;
     top:150px;
   }
 

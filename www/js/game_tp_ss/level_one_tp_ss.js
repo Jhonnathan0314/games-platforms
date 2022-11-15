@@ -22,9 +22,14 @@ function countTime() {
       }
     }, true);
   } else {
-    time -= 1;
-    setTimeout("countTime()", 1000);
+    if(time == 0){
+      this.window.open("../../html/game_tp_ss/level_two_tp_ss.html", "_self");
+    }else{
+      time -= 1;
+      setTimeout("countTime()", 1000);
+    }
   }
+
 }
 
 
