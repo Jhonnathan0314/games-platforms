@@ -113,13 +113,12 @@ body {
 .score_finish {
   background-image: url("../../img/game_tp_ss/gifFinish.gif");
   margin: 0;
-  height: 250px;
+  height: 280px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 1em;
-  padding: 1em;
   margin: 1em;
   flex-wrap: wrap;
   opacity: 0.8;
@@ -127,11 +126,6 @@ body {
 }
 
 .score_container {
-  height: 70%;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 20px 0;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -163,7 +157,7 @@ body {
   background-image: url("../../img/square_option.png");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-left: 30%;
+  margin-left: 42%;
   display: flex;
   justify-content: center;
   align-items: center;

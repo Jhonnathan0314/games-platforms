@@ -43,14 +43,14 @@ function countTime2() {
 }
 
 var sound = -1
-function checkSound(){
-    if(sound==1){
-        document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/audio.png")
-        document.getElementById("audio").removeAttribute("hidden")
-        sound = -1
-    }else{
-        document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/noAudio.png")
-        document.getElementById("audio").setAttribute("hidden", "hidden")
-        sound = 1
-    }
+function checkSound() {
+  if (sound == 1) {
+    document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/audio.png")
+    document.getElementById("audio").play();
+    sound = -1
+  } else {
+    document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/noAudio.png")
+    document.getElementById("audio").pause();
+    sound = 1
+  }
 }
