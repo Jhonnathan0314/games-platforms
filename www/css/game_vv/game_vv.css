@@ -41,7 +41,7 @@ body{
     height: 70px;
     bottom: 190px;
     right: 0%;
-    animation: movimientoObstaculo 3s linear infinite;
+    animation: movimientoObstaculo 2s linear infinite;
 }
 
 #obstaculo img{

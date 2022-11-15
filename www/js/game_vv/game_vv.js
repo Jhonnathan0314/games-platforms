@@ -1,6 +1,7 @@
 const jugador=document.getElementById("jugador");
 const obstaculo=document.getElementById("obstaculo");
 let gameLoop;
+let puntajeFinal=0;
 
 document.addEventListener("click", function(){
     jugador.classList.add("saltarJugador")
@@ -21,8 +22,10 @@ let vivo=setInterval(function(){
     
     
     if(obstaculoLeft < 20 && obstaculoLeft >0 && jugadorTop>=230){
-        navigator.vibrate(2000);
+        navigator.vibrate(1000);
+        puntajeFinal=clearInterval(pararIntervalo)
         alert("Juego terminado");
+        console.log(puntaje);
     }
 
 },100);
@@ -31,7 +34,7 @@ let vivo=setInterval(function(){
 
 
 
-setInterval(()=>{
+let pararIntervalo=setInterval(()=>{
     puntaje++;
     document.getElementById("puntaje").innerText=puntaje;
 },1000)
