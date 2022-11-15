@@ -7,7 +7,11 @@ window.addEventListener("devicemotion", function(event){
   document.getElementById("Accelerometer_gz").innerHTML = event.acceleration.z.toFixed(10);
   if(accelerometer >= 65){
     score = score + 2;
-    score_html.textContent = score
+    score_html.textContent = "PUNTAJE:0" + score
   }
 }, true);
 
+//Metodo - aparecer imagen explicativa
+setTimeout(function () {
+  $("#img").fadeOut(1800)
+})

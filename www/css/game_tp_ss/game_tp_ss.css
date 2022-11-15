@@ -2,15 +2,55 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Silkscreen', 'cursive';
     font-weight: bold;
     box-sizing: border-box;
     color: aliceblue;
   }
+  .total_content{
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+  }
+  @keyframes go-left-right {        /* dale un nombre: "go-left-right" */
+    from { left: 20%; }             /* animar desde la izquierda: 0px */
+    to { left: 50%; } /* animar a la izquierda: 100%-50px */
+  }
+  @keyframes go-right-left {        /* dale un nombre: "go-left-right" */
+    from { top: 20%;
+            left: 20%; }             /* animar desde la izquierda: 0px */
+    to { top: 50%; left: 20%;} /* animar a la izquierda: 100%-50px */
+  }
+
+  @keyframes go-aument {        /* dale un nombre: "go-left-right" */
+    from { width:198px; height: 288px; left: 20%;}             /* animar desde la izquierda: 0px */
+    to { width:298px; height: 388px; left: 20%;} /* animar a la izquierda: 100%-50px */
+  }
+
+  /* <img class="img1" src="Phone.png">
+  <img class="img2" src="Phone.png">
+  <img class="img3" src="Phone.png"> */
+  
+  .img1 {
+    animation: go-aument 2s infinite alternate;
+    position: fixed;
+  }
+
+  .img2 {
+    animation: go-right-left 2s infinite alternate;
+    position: fixed;
+  }
+
+  .img3 {
+    animation: go-aument 2s infinite alternate;
+    position: fixed;
+  }
+
+
   body{
     height: 100vh;
     background: linear-gradient(to top, rgb(55, 53, 97), rgb(169, 171, 188));
   }
+  
   .header{
     box-sizing: border-box;
     display: flex;
@@ -45,14 +85,4 @@
       height: 200px;
       border: 5px solid #CCC;
       border-radius: 10px;
-    }
-    
-    .ball {
-      position: absolute;
-      top   : 90px;
-      left  : 90px;
-      width : 20px;
-      height: 20px;
-      background: green;
-      border-radius: 100%;
     }
