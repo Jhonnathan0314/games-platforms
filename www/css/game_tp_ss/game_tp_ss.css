@@ -32,7 +32,7 @@
     to { left: 50%; } /* animar a la izquierda 50%*/
   }
   @keyframes go-right-left {  
-    from { top: 20%;
+    from { top: 30%;
             left: 20%; }          
     to { top: 50%; left: 20%;} /* animar abajo:50%*/
   }
