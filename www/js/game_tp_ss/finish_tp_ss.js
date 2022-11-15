@@ -5,17 +5,23 @@ var score2 = localStorage.getItem("score2")
 var score3 = localStorage.getItem("score3")
 //Obtener los datos del jugador y el número de juego asignado
 var player = localStorage.getItem("idPlayer")
-var game = localStorage.getItem("idGame")
+var game = 8
+var playersGame = []
 
 //Obtener jugadores de este juego
 function getPlayers(){
-    fetch("https://games-plat-db.herokuapp.com/playerhasgame/game/"+game)
+    fetch("https://games-plat-db.herokuapp.com/playerhasgame")
     .then(res=>res.json())
     .then(res=>validateRanking(res))
     .catch(error=> console.log(error))
 }
 //Validar sí ya hay jugadores que hayan terminado
 function validateRancking(players){
+    for(player of players){
+        if(player.idGame==8){
+            playersGame.push(player)
+        }
+    }
     //Primer puesto
     if(players.lenght == 0){
         document.getElementById("score").innerHTML = "1°"
@@ -56,8 +62,15 @@ function createScore(){
         }),
         headers:{"Content-type":"application/json"}
     }).then(res =>console.log(res)).catch(error =>console.log(error))
+    updateSesionCoordinator()
+    setTimeout(() => {
+        if(localStorage.getItem("role") == "player"){
+            window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+        }else{
+            window.open("../../html/coordinador_jf_wr/games.html","_self")
+        }
+    }, 500);
 }
-
 //Validar el sonido
 var sound = -1
 function checkSound(){
@@ -72,4 +85,14 @@ function checkSound(){
         document.getElementById("audio").pause();
         sound = 1
     }
+}
+
+function updateSesionCoordinator() {
+    fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("codeSesionPlayer"),{
+        method: "PUT",
+        body: JSON.stringify({ 
+            "coordinator": "default"
+         }),
+        headers: {"Content-type": "application/json"}
+    }).then(res => console.log("updateSesionCoordinator"))
 }
