@@ -21,7 +21,7 @@ function countTime() {
       }
       if (score == 400) {
         window.navigator.vibrate([1000]);
-        sessionStorage.setItem("score1", 400)
+        localStorage.setItem("score1", 400)
         this.window.open("../../html/game_tp_ss/level_two_tp_ss.html", "_self");
       }
     }, true);
@@ -33,7 +33,7 @@ function countTime() {
 
 function countTime2() {
   if (time2 == 0) {
-    sessionStorage.setItem("score1", score)
+    localStorage.setItem("score1", score)
     window.navigator.vibrate([1000]);
     this.window.open("../../html/game_tp_ss/level_two_tp_ss.html", "_self");
   } else {

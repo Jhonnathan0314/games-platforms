@@ -21,7 +21,7 @@ function countTime() {
       }
       if (score == 600) {
         window.navigator.vibrate([1000]);
-        sessionStorage.setItem("score2", 600)
+        localStorage.setItem("score2", 600)
         this.window.open("../../html/game_tp_ss/level_three_tp_ss.html", "_self");
       }
     }, true);
@@ -34,7 +34,7 @@ function countTime() {
 function countTime2() {
   if (time2 == 0) {
     window.navigator.vibrate([1000]);
-    sessionStorage.setItem("score2", score)
+    localStorage.setItem("score2", score)
     this.window.open("../../html/game_tp_ss/level_three_tp_ss.html", "_self");
   } else {
     time2 -= 1;

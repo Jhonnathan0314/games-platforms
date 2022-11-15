@@ -20,7 +20,7 @@ function countTime() {
         score_html.textContent = "PUNTAJE:0" + score
       }
       if (score == 800) {
-        sessionStorage.setItem("score3", 800)
+        localStorage.setItem("score3", 800)
         window.navigator.vibrate([2000]);
         this.window.open("../../html/game_tp_ss/finish_tp_ss.html", "_self");
       }
@@ -33,7 +33,7 @@ function countTime() {
 
 function countTime2() {
   if (time2 == 0) {
-    sessionStorage.setItem("score3", score)
+    localStorage.setItem("score3", score)
     window.navigator.vibrate([2000]);
     this.window.open("../../html/game_tp_ss/finish_tp_ss.html", "_self");
   } else {
