@@ -7,34 +7,46 @@
     color: aliceblue;
   }
   .total_content{
-    position: absolute;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
     background-color: #fff;
-    opacity: 0.6;
+    opacity: 0.8;
+    align-items: center;
+    flex-wrap: wrap;
   }
-  @keyframes go-left-right {        /* dale un nombre: "go-left-right" */
-    from { left: 20%; }             /* animar desde la izquierda: 0px */
-    to { left: 50%; } /* animar a la izquierda: 100%-50px */
+
+  @keyframes go-left-right {        
+    from { left: 20%; }            
+    to { left: 50%; } /* animar a la izquierda 50%*/
   }
-  @keyframes go-right-left {        /* dale un nombre: "go-left-right" */
+  @keyframes go-right-left {  
     from { top: 20%;
-            left: 20%; }             /* animar desde la izquierda: 0px */
-    to { top: 50%; left: 20%;} /* animar a la izquierda: 100%-50px */
+            left: 20%; }          
+    to { top: 50%; left: 20%;} /* animar abajo:50%*/
   }
 
-  @keyframes go-aument {        /* dale un nombre: "go-left-right" */
-    from { width:198px; height: 288px; left: 20%;}             /* animar desde la izquierda: 0px */
-    to { width:298px; height: 388px; left: 20%;} /* animar a la izquierda: 100%-50px */
+  @keyframes go-aument {       
+    from { width:198px; height: 288px; left: 20%;}          
+    to { width:298px; height: 388px; left: 20%;} /* aumentar imagen */
   }
+  .information_level{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #221f4d;
+    opacity: 0.8;
+  }
+  .information_level h1{
+    display: block;
 
-  /* <img class="img1" src="Phone.png">
-  <img class="img2" src="Phone.png">
-  <img class="img3" src="Phone.png"> */
-  
+  }
   .img1 {
     animation: go-aument 2s infinite alternate;
-    position: fixed;
+    top:150px;
   }
 
   .img2 {
