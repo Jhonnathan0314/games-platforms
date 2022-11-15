@@ -120,4 +120,5 @@ function deletePlayer() {
         body: JSON.stringify({ }),
         headers: {"Content-type": "application/json"}
     }).then(res => console.log("deletePlayers"))
+    window.open("../../index.html", "_self")
 }
