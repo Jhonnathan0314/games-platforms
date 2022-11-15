@@ -1,0 +1,237 @@
+@font-face {
+  font-family: athena;
+  src: url(../../assets/Athena.ttf);
+}
+
+* {
+  font-family: athena;
+}
+
+body {
+    background: #B4BEC9;
+}
+
+#Home{
+  width: 19%;
+  height: 60px;
+  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  background-image: url(../../img/list.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: rgb(33, 30, 76);    
+}
+
+#Scores{
+  width: 19%;
+  height: 60px;
+  margin: 0 30px 60%;
+  border-radius: 12px;
+  border: none;
+  background-image: url(../../img/play.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: rgb(33, 30, 76);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  .main-container {
+    max-width: 500px;
+    margin: -60% auto;
+
+  }
+  h1.titulo {
+    margin: 0 0 auto auto 20px;
+    text-align: center;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+    color: rgb(33, 30, 76);
+  }
+  h1#msg-final {
+    text-align: right;
+    color: crimson;
+    transition: all .5s ease;
+    transform: scale(0);
+    min-height: 50px;
+    margin-bottom: 0;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+   
+  }
+  .zoom-in {
+    transform: scale(1) !important;
+  }
+  #acierto {
+    text-align: center;
+    min-height: 24px;
+    transform: scale(0);
+  }
+  .acierto {
+    animation: zoomInOut 1s ease;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+  }
+  .rojo {
+    color: red;
+  }
+  .verde {
+    color: green;
+  }
+  @keyframes zoomInOut {
+    0% { transform: scale(0); }
+    50% { transform: scale(1); }
+    70% { transform: scale(1); }
+    100% { transform: scale(0); }
+  }
+  h2.palabra {
+    margin: 15% auto 25px auto;
+    text-align: center;
+    color: royalblue;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+  }
+  .flex-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10% auto auto auto; 
+
+  }
+
+/*Estilo Botón -- elegir otra palabra*/
+#reset{
+
+  width: 70%;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 5px solid rgb(33, 30, 76);
+  background: linear-gradient(to top, rgb(200, 200, 200), white);
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(33, 30, 76);
+}
+/*Estilo Botón -- Dame una Pista*/
+
+#pista{
+
+  width: 70%;
+  height: 40px;
+  border-radius: 12px;
+  border: 5px solid rgb(33, 30, 76);
+  background: linear-gradient(to top, rgb(200, 200, 200), white);
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(33, 30, 76);
+}
+ .letra{
+  width: 15%;
+  height: 40px;
+  margin: 5px 0;
+  border-radius: 12px;
+  border: 8px solid rgb(33, 30, 76);
+  color: rgb(33, 30, 76);
+   border: 4px solid rgb(33, 30, 76);
+  font-size:20px;
+  color: rgb(33, 30, 76);
+  font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+
+  }
+  .no-wrap {
+    flex-wrap: nowrap !important;
+   
+  }
+
+  .opciones{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+
+  }
+
+  .col {
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+
+    
+  }
+
+  #turnos h3 {
+    margin-top:60px;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+    color: rgb(33, 30, 76);
+  }
+  h3 span {
+     color: orangered;
+     font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+  }
+  .letra:disabled {
+    color:rgba(255, 0, 0, 0.5);
+  }
+  picture {
+    position: relative;
+    
+  }
+  picture img {
+    position: absolute;
+    top: -125px;
+    left: -196px;
+    height: 215px;
+  }
+  #image5, #image4, #image3,
+  #image2, #image1, #image0 {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .fade-in {
+    opacity: 1 !important;
+  }
+  .encuadre {
+    border: 2px dashed crimson;
+    padding: 3px 2px 2px 6px;
+  }
+  h7{
+    position: absolute;
+    font-size:17px;
+    color: rgb(33, 30, 76);
+    
+    top: 50px;
+    right: 5%;
+    font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif; 
+  }
+  h8{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    top: 10px;
+    right: 5%;
+    font-size:50px;
+    color: rgb(33, 30, 76);
+    margin-left: 50px;
+    font: 500 1.3cm Tahoma, Arial, Verdana, sans-serif; 
+  }
+  #encabezado{
+    margin-top: -75%;
+    margin-left: 70%;
+      position: absolute;
+    font-size:17px;
+    color: rgb(33, 30, 76);
+    font: 500 0.9cm Tahoma, Arial, Verdana, sans-serif;   
+  }
+  #time{
+    margin-top: -67%;
+    margin-left: 70%;
+    position: absolute;
+    font-size:17px;
+    color: rgb(33, 30, 76);
+    font: 500 0.9cm Tahoma, Arial, Verdana, sans-serif; 
+  }
+  #hueco-pista{
+    font-size:17px;
+    color: rgb(33, 30, 76);
+    font: 500 0.9cm Tahoma, Arial, Verdana, sans-serif;   
+  }
