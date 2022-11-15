@@ -10,7 +10,7 @@ function solicitarNombre(){
 
 function goScoreBoard(){
 
-    window.open("../html/ScoreBoard.html","_self")
+    window.open("../html/game_ef_lm/ScoreBoard.html","_self")
 
 }
 
@@ -124,7 +124,7 @@ function pista() {
 // Compruba si ha finalizado
 function compruebaFin() {
   if (oculta.indexOf("_") == -1) {
-    var snd = new Audio("../aud/gano.mp3");
+    var snd = new Audio("../../img/game_ef_lm/gano.mp3");
     snd.play();
     score =parseInt(score / seconds);
     document.getElementById("msg-final").innerHTML = "Felicidades !! \n Score \n "+score;
@@ -138,7 +138,7 @@ function compruebaFin() {
     pause();
     btnInicio.onclick = function () { location.reload() };
   } else if (cont == 0) {
-    var snd = new Audio("../aud/perdio.mp3");
+    var snd = new Audio("../../img/game_ef_lm/perdio.mp3");
     score=0;
     snd.play();
     navigator.vibrate([400, 200, 500]);
