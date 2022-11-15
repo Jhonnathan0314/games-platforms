@@ -15,20 +15,22 @@
     <header class="header">
         <h1>UNLOCKFIT</h1>
     </header>
-    
+    <div class="information_level" id="information_level">
+        <h1>NIVEL 1</h1>
+        <h4>Mueva su télefono de lado a lado</h4>
+    </div>
     <div class="total_content" id="img">
-        <div class="information_level">
-            <h1>NIVEL 1</h1>
-            <h5>Mueva su télefono de adelante hacia atras</h5>
-        </div>
         <img class="img1" src="../../img/game_tp_ss/Phone.png">
     </div>
+    
     <div class="score">
         <h1 id="score">PUNTAJE:0000</h1>
     </div>
     <div class="image">
         <img name="cube" src="../../img/game_tp_ss/img1.png" alt="">
     </div>
+    document.getElementById('information_level').setAttribute("hidden", "hidden")
+        <audio src="../../img/game_tp_ss/soundOne.mp3" autoplay="true" loop="true"></audio>
         <script src="../../js/game_tp_ss/level_one_tp_ss.js"></script>
     </body>
 </html>

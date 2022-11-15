@@ -16,9 +16,19 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  .information_level{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #221f4d;
+    opacity: 0.8;
+    flex-direction: column
+  }
 
   @keyframes go-left-right {        
-    from { left: 20%; }            
+    from { left: 10%; }            
     to { left: 50%; } /* animar a la izquierda 50%*/
   }
   @keyframes go-right-left {  
@@ -31,22 +41,10 @@
     from { width:198px; height: 288px; left: 20%;}          
     to { width:298px; height: 388px; left: 20%;} /* aumentar imagen */
   }
-  .information_level{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #221f4d;
-    opacity: 0.8;
-  }
-  .information_level h1{
-    display: block;
-
-  }
+ 
   .img1 {
     animation: go-left-right 2s infinite alternate;
-    top:150px;
+    position: fixed;
   }
 
   .img2 {
