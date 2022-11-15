@@ -11,6 +11,7 @@ function countTime() {
     countTime2()
     window.addEventListener("devicemotion", function (event) {
       //Metodo - aparecer imagen explicativa
+      document.getElementById('information_level').setAttribute("hidden", "hidden")
       document.getElementById('img').setAttribute("hidden", "hidden")
       //Obtener la aceleración en el X
       accelerometer = (event.acceleration.x).toFixed(10)
