@@ -1,12 +1,25 @@
 localStorage.setItem("location", "lobbie")
 
 window.addEventListener('DOMContentLoaded', function(ev) { 
-    findAllPlayers()
+    checkPlayer()
+    checkActualPlayers()
     setInterval(() => {
-        findAllPlayers()
+        checkActualPlayers()
         checkStart()
     }, 3000)
 });
+
+function checkPlayer() {
+    fetch("https://games-plat-db.herokuapp.com/player/" + localStorage.getItem("idPlayer"))
+    .then(res => res.json())
+    .then(res => checkUsername(res))
+}
+
+function checkUsername(player) {
+    if(player.username != "Esperando..."){
+        cleanScreen()
+    }
+}
 
 function checkStart() {
     fetch("https://games-plat-db.herokuapp.com/sesion/" + localStorage.getItem("codeSesionPlayer"))
@@ -22,7 +35,7 @@ function checkState(sesion) {
     }
 }
 
-function findAllPlayers(){
+function checkActualPlayers(){
     fetch("https://games-plat-db.herokuapp.com/player")
     .then(res => res.json())
     .then(res => showPlayers(res))
@@ -73,16 +86,36 @@ function cleanScreen() {
     saveButton.setAttribute("hidden", "true");
 }
 
+function deleteData(){
+    findAllPlayerHasGames()
+}
+
+function findAllPlayerHasGames(){
+    fetch("https://games-plat-db.herokuapp.com/playerhasgame")
+    .then(res => res.json())
+    .then(res => deletePlayerHasGames(res))
+}
+
+function deletePlayerHasGames(playerHasGames){
+    for(playerHasGame of playerHasGames){
+        console.log("deletePlayerHasGames: " + playerHasGame.player.sesion.id_sesion + "--" + localStorage.getItem("code"))
+        if(playerHasGame.player.idPlayer == localStorage.getItem("idPlayer")){
+            fetch('https://games-plat-db.herokuapp.com/playerhasgame/'+playerHasGame.idPlayerHasGame,{
+                method: "DELETE",
+                body: JSON.stringify({ }),
+                headers: {"Content-type": "application/json"}
+            }).then(res => console.log("deletePlayerHasGames"))
+        }
+    }
+    setTimeout(() => {
+        deletePlayer()
+    }, 150)
+}
+
 function deletePlayer() {
-    let idPlayer = localStorage.getItem("idPlayer")
-    fetch('https://games-plat-db.herokuapp.com/player/' + idPlayer,{
+    fetch('https://games-plat-db.herokuapp.com/player/'+localStorage.getItem("idPlayer"),{
         method: "DELETE",
         body: JSON.stringify({ }),
         headers: {"Content-type": "application/json"}
-    }).then(res => 
-        setTimeout(() => {
-            window.open("../../index.html", "_self")
-        }, 150),
-        localStorage.removeItem("codeSesionPlayer"),
-        localStorage.removeItem("idPlayer"))
+    }).then(res => console.log("deletePlayers"))
 }
