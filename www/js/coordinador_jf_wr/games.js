@@ -64,6 +64,18 @@ function startGame(nameGame){
                 localStorage.setItem("role", "admin")
                 window.open("../../html/game_tp_ss/level_one_tp_ss.html", "_self")
             }, 300))
+    }else if(nameGame == "Help me Jump"){
+        fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+            method: "PUT",
+            body: JSON.stringify({ 
+                "coordinator": "Help me Jump"
+             }),
+            headers: {"Content-type": "application/json"}
+        }).then(res => 
+            setTimeout(() => {
+                localStorage.setItem("role", "admin")
+                window.open("../../html/game_vv/game_vv.html", "_self")
+            }, 300))
     }
 }
 
