@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Nivel Dificil</title>
+    <link rel="stylesheet" href="../css/DifficultLevel.css">
+    <link rel="stylesheet" href="css/normalize.css">
+</head>
+<body>
+
+   <!--Boton de menu-->
+   <button onclick="goHome()"  id="Home" ></button>
+   <!--Boton de puntajes-->
+   <button onclick="goScoreBoard()" id="Scores"></button>
+
+   <p id="encabezado">TIME</p>
+   <p id="time"><span id="minutes">00</span>:
+     <span id="seconds">00</span>
+ 
+   </p>
+   <!--Mostrar el tiempo-->
+
+
+    <div class="main-container">
+     
+      <h1 class="titulo">Nivel Dificil</h1>
+     
+     
+
+        
+        
+        <h1 id="msg-final"></h1>
+        <h3 id="acierto"></h3>
+          <div class="flex-row no-wrap">
+            
+            
+            
+            <picture>
+              <img src="../img/ahorcado_6.png" alt="" id="image6">
+              <img src="../img/ahorcado_5.png" alt="" id="image5">
+              <img src="../img/ahorcado_4.png" alt="" id="image4">
+              <img src="../img/ahorcado_3.png" alt="" id="image3">
+              <img src="../img/ahorcado_2.png" alt="" id="image2">
+              <img src="../img/ahorcado_1.png" alt="" id="image1">
+              <img src="../img/ahorcado_0.png" alt="" id="image0">
+            </picture>
+
+
+
+          </div>
+          
+
+          <div class="flex-row" id="turnos">
+
+           
+
+            <div class="opciones">
+              <h3>Intentos restantes: <span id="intentos">3</span></h3>
+              <br>
+              
+
+            </div>
+
+            <div class="col">
+
+              <h2 class="palabra" id="palabra"></h2>
+              <button onclick="inicio()" id="reset">Elegir otra palabra</button>
+              <br>
+              <button onclick="pista()" id="pista">Dame una pista!</button>
+              <br><br>
+              <span id="hueco-pista"></span>
+            </div>
+            </div>
+            
+            <div class="flex-row">
+              <div class="col">
+                <div class="flex-row" id="abcdario">
+                </div>
+              </div>
+              <div class="col"></div>
+            </div>
+      </div>
+   <!--FIN DIV Contenedor de Botónes-->
+
+   
+   <script src="../js/DifficultLevel.js"></script>
+</body>
+</html>
