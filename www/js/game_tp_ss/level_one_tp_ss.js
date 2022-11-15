@@ -8,7 +8,7 @@ var time =  10;
 setTimeout(
   window.addEventListener("devicemotion", function(event){
   //Metodo - aparecer imagen explicativa
-    $("#img").fadeOut(3000)
+  document.getElementById('img').setAttribute("hidden", "hidden")
   //Obtener la aceleración en el X 
   accelerometer = (event.acceleration.x).toFixed(10)
   if(accelerometer >= 65){
@@ -19,7 +19,8 @@ setTimeout(
     sessionStorage.setItem("score",400)
     this.window.open("../../html/game_tp_ss/level_two_tp_ss.html","_self");
   }
-}, true),10000);
+}, true),3000);
+
 
 
 
