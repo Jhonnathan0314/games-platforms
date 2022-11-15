@@ -52,6 +52,18 @@ function startGame(nameGame){
                 localStorage.setItem("role", "admin")
                 window.open("../../html/game_rp/views/main.html", "_self")
             }, 300))
+    }else if(nameGame == "Unlockfit"){
+        fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("code"),{
+            method: "PUT",
+            body: JSON.stringify({ 
+                "coordinator": "Unlockfit"
+             }),
+            headers: {"Content-type": "application/json"}
+        }).then(res => 
+            setTimeout(() => {
+                localStorage.setItem("role", "admin")
+                window.open("../../html/game_tp_ss/level_one_tp_ss.html", "_self")
+            }, 300))
     }
 }
 

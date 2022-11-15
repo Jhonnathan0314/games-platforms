@@ -32,6 +32,8 @@ function checkState(sesion) {
         window.open("../../html/game_pb_mm/homepb.html", "_self")
     }else if(sesion.coordinator == "Adivina pelicula"){
         window.open("../../html/game_rp/views/main.html", "_self")
+    }else if(sesion.coordinator == "Unlockfit"){
+        window.open("../../html/game_tp_ss/level_one_tp_ss.html", "_self")
     }
 }
 
