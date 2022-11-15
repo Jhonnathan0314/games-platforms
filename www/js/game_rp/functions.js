@@ -69,7 +69,7 @@ function selectEscene(){
             } else if (cuenta > indiceEscena) {
                 iniciarEscena();
             }
-        }, 4000);
+        }, 60000);
     }
 
 
