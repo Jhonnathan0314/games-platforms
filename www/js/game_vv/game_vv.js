@@ -20,10 +20,15 @@ let vivo=setInterval(function(){
     //obtener la posicion del obstaculo en x
     let obstaculoLeft=parseInt(window.getComputedStyle(obstaculo).getPropertyValue("left"));
     
-    
-    if(obstaculoLeft < 20 && obstaculoLeft >0 && jugadorTop>=230){
+    if(obstaculoLeft<0){
+        obstaculo.style.display="none";
+    }else{
+        obstaculo.style.display='';
+    }
+
+    if(obstaculoLeft < 35 && obstaculoLeft >0 && jugadorTop>90){
         navigator.vibrate(1000);
-        puntajeFinal=clearInterval(pararIntervalo)
+        puntajeFinal=clearInterval(pararIntervalo);
         alert("Juego terminado");
         console.log(puntaje);
     }
