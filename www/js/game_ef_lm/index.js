@@ -11,18 +11,19 @@ function onDeviceReady() {
 //Método del Nivel Fácil
 function LevelEasy(){
 
-    window.open("./html/LevelEasy.html","_self")
+    console.log("xscvx");
+    window.open("../game_ef_lm/LevelEasy.html","_self")
 }
 //Método del Nivel Medio
 function MediumLevel(){
 
-    window.open("./html/MediumLevel.html","_self")
+    window.open("../game_ef_lm/LevelEasy.html","_self")
 
 }
 //Método del Nivel Dificil
 function DifficultLevel(){
 
-    window.open("./html/DifficultLevel.html","_self")
+    window.open("../game_ef_lm/LevelEasy.html","_self")
 
 }
 

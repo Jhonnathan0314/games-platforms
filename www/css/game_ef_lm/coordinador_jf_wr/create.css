@@ -1,0 +1,57 @@
+p {
+    color: #fff;
+}
+
+.players {
+    padding: 10px;
+    height: 180px;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.container_title {
+    font-size: 40px;
+}
+
+.container_subtitle{
+    font-size: 30px;
+}
+
+.container_text {
+    font-size: 25px;
+    text-align: center;
+}
+
+input {
+    width: 250px;
+    height: 74px;
+    border-radius: 22px;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(33, 30, 76);
+    background-image: url(../../img/rectangle_option.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.code {
+    position: relative;
+}
+
+.code input {
+    padding-right: 50px;
+}
+
+.img {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+}
+
+.img img {
+    width: 50px;
+}

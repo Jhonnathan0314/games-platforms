@@ -11,7 +11,7 @@ body {
   margin: 10px;
   border-radius: 12px;
   border: 5px solid rgb(33, 30, 76);
-  background-image: url(../img/opciones.png);
+  background-image: url(../../img/game_ef_lm/opciones.png);
   color: rgb(33, 30, 76);    
 
 }
@@ -23,7 +23,7 @@ body {
   margin: 0 30px 60%;
   border-radius: 12px;
   border: 5px solid rgb(33, 30, 76);
-  background-image: url(../img/play.png);
+  background-image: url(../../img/play.png);
   color: rgb(33, 30, 76);
 
 }

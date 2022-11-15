@@ -13,7 +13,7 @@ body {
     border: 3px solid rgb(33, 30, 76);
     border-radius: 12px;
     margin:4% 1% 1% 10%;
-    background-image: url(../img/opciones.png);
+    background-image: url(../../img/game_ef_lm/opciones.png);
     width: 19%;
     height: 60px;
     
@@ -25,7 +25,7 @@ body {
     border: 3px solid rgb(33, 30, 76);
     border-radius: 12px;
     margin:-4% 1% 1% 70%;
-    background-image: url(../img/exitBlue.png);
+    background-image: url(../../img/game_ef_lm/exitBlue.png);
     width: 19%;
     height: 60px;
 

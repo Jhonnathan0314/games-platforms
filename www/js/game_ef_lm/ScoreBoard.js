@@ -1,6 +1,6 @@
 function goHome(){
 
-    window.open("../index.html","_self")
+    window.open("../game_ef_lm/index.html","_self")
 
 }
 

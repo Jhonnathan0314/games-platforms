@@ -9,14 +9,13 @@ function solicitarNombre(){
 }
 
 function goScoreBoard(){
-
-    window.open("../html/game_ef_lm/ScoreBoard.html","_self")
+  window.open("../game_ef_lm/ScoreBoard.html", "_self")
 
 }
 
 function goHome(){
 
-    window.open("../index.html","_self")
+  window.open("../game_ef_lm/index.html", "_self")
 
 }
 

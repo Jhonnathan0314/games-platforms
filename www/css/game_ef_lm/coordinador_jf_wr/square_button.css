@@ -1,0 +1,22 @@
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.square {
+    width: 42px;
+    height: 42px;
+    background-image: url("../../img/square_option.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square img {
+    width: 27px;
+}
