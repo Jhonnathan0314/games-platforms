@@ -19,8 +19,9 @@ function countTime() {
         score = score + 4;
         score_html.textContent = "PUNTAJE:0" + score
       }
-      if (score == 400) {
-        sessionStorage.setItem("score", 400)
+      if (score == 600) {
+        window.navigator.vibrate([1000]);
+        sessionStorage.setItem("score2", 600)
         this.window.open("../../html/game_tp_ss/level_three_tp_ss.html", "_self");
       }
     }, true);
@@ -32,9 +33,24 @@ function countTime() {
 
 function countTime2() {
   if (time2 == 0) {
+    window.navigator.vibrate([1000]);
+    sessionStorage.setItem("score2", score)
     this.window.open("../../html/game_tp_ss/level_three_tp_ss.html", "_self");
   } else {
     time2 -= 1;
     setTimeout("countTime2()", 1000);
   }
+}
+
+var sound = -1
+function checkSound(){
+    if(sound==1){
+        document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/audio.png")
+        document.getElementById("audio").removeAttribute("hidden")
+        sound = -1
+    }else{
+        document.getElementById("imgSound").setAttribute("src", "../../img/game_tp_ss/noAudio.png")
+        document.getElementById("audio").setAttribute("hidden", "hidden")
+        sound = 1
+    }
 }
