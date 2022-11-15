@@ -14,8 +14,11 @@ var finalScore = 0;
 var rightAnswer;
 var ok = document.getElementById("modalOk");
 var oknt = document.getElementById("modalOkn't");
-var scoreModal = document.getElementById('finalScore')
-var timeOut;
+var final = document.getElementById('final');
+var scoreModal = document.getElementById('finalScore');
+var timer;
+var indiceEscena = 0;
+var evento;
 
 let nick = document.getElementById("username");
 
@@ -30,7 +33,7 @@ function onYouTubeIframeAPIReady() {
         height: '200',
         width: '250',
         events: {
-            'onReady': selectEscene
+            'onReady': onYtReady
         }
     });
 }
@@ -45,25 +48,47 @@ function loadEscenes(){
     })
 }
 
-function selectEscene(event){
-    escenas.forEach((escena, i) => {
-        timeOut = setTimeout(() => {
-            clearAnswers();
-            closeModals();
-            document.getElementById('escene').innerText ='Escena ' + escena['id']
-            var audioPlayer = document.getElementById('audioPlayer');
-            document.getElementById("player").style.display = 'none';
-            document.getElementById('player').videoId = escena['direccion'];
-            audioPlayer.src='https://www.cuentapremium.com/pistasPlataformas/'+escena['id']+'.mp3';
-            audioPlayer.style.display = 'block';
-            event.target.loadVideoById(escena['direccion']);
-            event.target.stopVideo();
-            mixAnswers(escena);
-            startTime = new Date().getTime();
-        }, i * 30000)
-        }
-    )
-    console.log(finalScore)
+function onYtReady(event){
+    evento = event
+    selectEscene()
+}
+
+function selectEscene(){
+    var cuenta = escenas.length;
+    if (indiceEscena > 13){
+        clearInterval(timer);
+        document.getElementById('final').style.display ="block";
+        document.getElementById('fscore').innerText = finalScore;
+    } else {
+        iniciarEscena();
+        timer = setInterval(() => {
+            if (indiceEscena > 13){
+                clearInterval(timer);
+                document.getElementById('final').style.display ="block";
+                document.getElementById('fscore').innerText = finalScore;
+            } else if (cuenta > indiceEscena) {
+                iniciarEscena();
+            }
+        }, 4000);
+    }
+
+
+}
+
+function iniciarEscena() {
+    clearAnswers();
+    closeModals();
+    document.getElementById('escene').innerText ='Escena ' + escenas[indiceEscena]['id']
+    var audioPlayer = document.getElementById('audioPlayer');
+    document.getElementById("player").style.display = 'none';
+    document.getElementById('player').videoId = escenas[indiceEscena]['direccion'];
+    audioPlayer.src='https://www.cuentapremium.com/pistasPlataformas/'+escenas[indiceEscena]['id']+'.mp3';
+    audioPlayer.style.display = 'block';
+    evento.target.loadVideoById(escenas[indiceEscena]['direccion']);
+    evento.target.stopVideo();
+    mixAnswers(escenas[indiceEscena]);
+    startTime = new Date().getTime();
+    indiceEscena++;
 }
 
 function mixAnswers(escena) {
@@ -129,10 +154,11 @@ function choose(event){
 function closeModals(){
     ok.style.display = "none";
     oknt.style.display = "none";
+    final.style.display = "none";
 }
 
 window.onclick = function(event) {
-    if (event.target == ok || event.target == oknt)
+    if (event.target == ok || event.target == oknt || event.target == final)
         closeModals()
 }
 
@@ -148,6 +174,6 @@ function hide_show_YT() {
 }
 
 function cambiarEscena(){
-    debugger
-    clearTimeout(timeOut.clear())
+    clearInterval(timer)
+    selectEscene()
 }
