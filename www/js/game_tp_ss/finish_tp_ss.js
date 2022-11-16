@@ -5,77 +5,93 @@ var score2 = localStorage.getItem("score2")
 var score3 = localStorage.getItem("score3")
 //Obtener los datos del jugador y el número de juego asignado
 var player = localStorage.getItem("idPlayer")
-var game = localStorage.getItem("idGame")
+var game = 8
+var flag = false
 
 //Obtener jugadores de este juego
+getPlayers()
 function getPlayers(){
-    fetch("https://games-plat-db.herokuapp.com/playerhasgame/game/"+game)
+    fetch("https://games-plat-db.herokuapp.com/playerhasgame")
     .then(res=>res.json())
     .then(res=>validateRanking(res))
     .catch(error=> console.log(error))
 }
 //Validar sí ya hay jugadores que hayan terminado
-function validateRancking(players){
-    //Primer puesto
-    if(players.lenght == 0){
-        document.getElementById("score").innerHTML = "1°"
-        score = 200;
-        document.getElementById("score_add").innerHTML = "1ER PUESTO  .................. +" + score
+function validateRanking(players){
+    players.sort(function (a, b) {
+        if (a.totalScore < b.totalScore) {
+          return 1;
+        }
+        if (a.totalScore > b.totalScore) {
+          return -1;
+        }
+        return 0;
+    });
+    for(player of players){
+        if(player.game.idGame==8){
+            flag = true
+        }
     }
-    //Segundo puesto
-    if(players.lenght == 1){
-        document.getElementById("score").innerHTML = "2°"
-        score = 100;
-        document.getElementById("score_add").innerHTML = "2NDO PUESTO  .................. +" + score
-    }
-    //Tercer puesto
-    if(players.lenght == 2){
-        document.getElementById("score").innerHTML = "3°"
-        score = 50;
-        document.getElementById("score_add").innerHTML = "3ER PUESTO  .................. +" + score
-    }
+    // //Primer puesto
+    // if(players.lenght == 0){
+    //     document.getElementById("score").innerHTML = "1°"
+    //     score = 200;
+    //     document.getElementById("score_add").innerHTML = "1ER PUESTO  .................. +" + score
+    // }
+    // //Segundo puesto
+    // if(players.lenght == 1){
+    //     document.getElementById("score").innerHTML = "2°"
+    //     score = 100;
+    //     document.getElementById("score_add").innerHTML = "2NDO PUESTO  .................. +" + score
+    // }
+    // //Tercer puesto
+    // if(players.lenght == 2){
+    //     document.getElementById("score").innerHTML = "3°"
+    //     score = 50;
+    //     document.getElementById("score_add").innerHTML = "3ER PUESTO  .................. +" + score
+    // }
     //Obtener el puntaje total
     score = score + parseInt(score1) + parseInt(score2) + parseInt(score3)
+    viewScores(flag)
 }
 //Visualización de resultados
-viewScores()
-function viewScores(){
+function viewScores(flag){
     document.getElementById("score1").innerHTML = "NIVEL 1 .................. " + score1
     document.getElementById("score2").innerHTML = "NIVEL 2 .................. " + score2
     document.getElementById("score3").innerHTML = "NIVEL 3 .................. " + score3
     document.getElementById("scoreTotal").innerHTML = "PUNTAJE TOTAL ....... " + score
     //Insertar el jugador que finalizo
-    createScore()
+    createScore(flag)
 }
  //Insertar el jugador que finalizo
-function createScore(){
-    fetch("https://games-plat-db.herokuapp.com/playerhasgame/player/" + player + "/game/" + game,{
+function createScore(flag){
+    const idPlayer = localStorage.getItem("idPlayer")
+    fetch("https://games-plat-db.herokuapp.com/playerhasgame/player/" + idPlayer + "/game/8",{
         method:"post",
         body:JSON.stringify({
             "score": score
         }),
         headers:{"Content-type":"application/json"}
-    }).then(res =>console.log(res)).catch(error =>console.log(error))
-}
-//Obtener el jugador en la sesión general
-function getPlayer(){
-    fetch("https://games-plat-db.herokuapp.com/player/"+player)
-    .then(res=>res.json())
-    .then(res=>updateScore(res))
-    .catch(error=> console.log(error))
-}
-//Actualizar puntaje general del jugador
-function updateScore(dataPlayer){
-    fetch("https://games-plat-db.herokuapp.com/player/" + player ,{
-        method:"PUT",
-        body:JSON.stringify({
-            "username": dataPlayer.username,
-            "score": dataPlayer.totalScore + score
-        }),
-        headers:{"Content-type":"application/json"}
-    }).then(res =>console.log(res)).catch(error =>console.log(error))
-}
+    }).then(res => 
+        console.log(res))
+    .catch(error => 
+        console.log(error))
 
+    if(!flag){
+        setTimeout(() => {
+            getPlayers()
+        }, 500);
+    }else{
+        updateSesionCoordinator()
+        setTimeout(() => {
+            if(localStorage.getItem("role") == "player"){
+                window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+            }else{
+                window.open("../../html/coordinador_jf_wr/games.html","_self")
+            }
+        }, 5000);
+    }
+}
 //Validar el sonido
 var sound = -1
 function checkSound(){
@@ -90,4 +106,14 @@ function checkSound(){
         document.getElementById("audio").pause();
         sound = 1
     }
+}
+
+function updateSesionCoordinator() {
+    fetch('https://games-plat-db.herokuapp.com/sesion/' + localStorage.getItem("codeSesionPlayer"),{
+        method: "PUT",
+        body: JSON.stringify({ 
+            "coordinator": "default"
+         }),
+        headers: {"Content-type": "application/json"}
+    }).then(res => console.log("updateSesionCoordinator"))
 }
