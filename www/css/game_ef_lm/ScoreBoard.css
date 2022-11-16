@@ -1,0 +1,40 @@
+body {
+    background: #B4BEC9;
+}
+
+.tittle{
+    margin: -10% ;
+    text-align: center;
+     position: relative;
+     font: 700 0.5cm Tahoma, Arial, Verdana, sans-serif;
+}
+
+#Home{
+    border: 3px solid rgb(33, 30, 76);
+    border-radius: 12px;
+    margin:4% 1% 1% 10%;
+    border: none;
+    background-image: url(../../img/list.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 19%;
+    height: 60px;
+    
+
+}
+
+
+#Exit{
+    border: 3px solid rgb(33, 30, 76);
+    border-radius: 12px;
+    margin:-4% 1% 1% 70%;
+    border: none;
+    background-image: url(../../img/exit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 19%;
+    height: 60px;
+
+}

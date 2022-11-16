@@ -159,15 +159,17 @@ function compruebaFin() {
     }, 500);
   }
   if(flag){
-    addScore()
-    updateSesionCoordinator()
     setTimeout(() => {
-        if(localStorage.getItem("role") == "player"){
-            window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
-        }else{
-            window.open("../../html/coordinador_jf_wr/games.html","_self")
-        }
-    }, 500);
+      addScore()
+      updateSesionCoordinator()
+      setTimeout(() => {
+          if(localStorage.getItem("role") == "player"){
+              window.open("../../html/coordinador_jf_wr/lobbie.html","_self")
+          }else{
+              window.open("../../html/coordinador_jf_wr/games.html","_self")
+          }
+      }, 500);
+    }, 5000);
   }
 }
 
