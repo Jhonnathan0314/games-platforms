@@ -7,6 +7,7 @@ var score3 = localStorage.getItem("score3")
 var player = localStorage.getItem("idPlayer")
 var game = 8
 var flag = false
+var playersGame = []
 
 //Obtener jugadores de este juego
 getPlayers()
@@ -30,8 +31,11 @@ function validateRanking(players){
     for(player of players){
         if(player.game.idGame==8){
             flag = true
+            playersGame.push(player)
         }
     }
+
+    console.log(playersGame)
     // //Primer puesto
     // if(players.lenght == 0){
     //     document.getElementById("score").innerHTML = "1°"
