@@ -107,11 +107,12 @@ body {
   justify-content: center;
   padding: 1em;
   padding-top: 4em;
+  flex-direction: column;
 
 }
 
 .score_finish {
-  background-image: url("../../img/game_tp_ss/gifFinish.gif");
+  background-image: url("../../img/game_tp_ss/background.gif");
   margin: 0;
   height: 280px;
   box-sizing: border-box;
@@ -137,7 +138,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2fbfd;
+  background-color: #ffffff;
   border-radius: 1em;
   padding: 1em;
   margin: 1em;

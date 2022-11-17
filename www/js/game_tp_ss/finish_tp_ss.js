@@ -35,25 +35,25 @@ function validateRanking(players){
         }
     }
 
-    console.log(playersGame)
-    // //Primer puesto
-    // if(players.lenght == 0){
-    //     document.getElementById("score").innerHTML = "1°"
-    //     score = 200;
-    //     document.getElementById("score_add").innerHTML = "1ER PUESTO  .................. +" + score
-    // }
-    // //Segundo puesto
-    // if(players.lenght == 1){
-    //     document.getElementById("score").innerHTML = "2°"
-    //     score = 100;
-    //     document.getElementById("score_add").innerHTML = "2NDO PUESTO  .................. +" + score
-    // }
-    // //Tercer puesto
-    // if(players.lenght == 2){
-    //     document.getElementById("score").innerHTML = "3°"
-    //     score = 50;
-    //     document.getElementById("score_add").innerHTML = "3ER PUESTO  .................. +" + score
-    // }
+    console.log(playersGame.length)
+    //Primer puesto
+    if(playersGame.length == 0){
+        document.getElementById("score").innerHTML = "1°"
+        score = 200;
+        document.getElementById("score_add").innerHTML = "1ER PUESTO  .................. +" + score
+    }
+    //Segundo puesto
+    if(playersGame.length == 1){
+        document.getElementById("score").innerHTML = "2°"
+        score = 100;
+        document.getElementById("score_add").innerHTML = "2NDO PUESTO  .................. +" + score
+    }
+    //Tercer puesto
+    if(playersGame.length == 2){
+        document.getElementById("score").innerHTML = "3°"
+        score = 50;
+        document.getElementById("score_add").innerHTML = "3ER PUESTO  .................. +" + score
+    }
     //Obtener el puntaje total
     score = score + parseInt(score1) + parseInt(score2) + parseInt(score3)
     viewScores(flag)
