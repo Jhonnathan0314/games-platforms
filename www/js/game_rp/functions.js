@@ -35,7 +35,7 @@ var escenas = [
         "id": "7"
     },
     {
-        "nombre" : "Bad Boys",
+        "nombre" : "Super Cool",
         "direccion": "RLzzn0JEe3Y",
         "id": "8"
     },
@@ -70,6 +70,7 @@ var escenas = [
         "id": "14"
     }
 ];
+
 var player;
 var startTime;
 var finalScore = 0;
