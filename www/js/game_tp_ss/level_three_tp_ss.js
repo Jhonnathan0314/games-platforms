@@ -15,7 +15,7 @@ function countTime() {
       document.getElementById('img').setAttribute("hidden", "hidden")
       //Obtener la aceleración en el X
       accelerometer = (event.acceleration.z).toFixed(10)
-      if (accelerometer >= 65) {
+      if (accelerometer >= 45) {
         score = score + 2;
         score_html.textContent = "PUNTAJE:0" + score
       }
